@@ -14,18 +14,19 @@
     "Carlos" => 4,
     "Julia" => 7
 ];
-
+echo "<h3>Lista de aprovado:</h3> <br>";
 foreach ($Alunos as $nome => $nota) {
 if($Alunos >=7){
-      echo "<h3>$nome: Aprovado</h3>";
+      echo "<h4>$nome: Aprovado</h4>";
 }
   
 else{
-     echo "<h3>$nome: Reprovado</h3>";
+     echo "<h4>$nome: Reprovado</h4>";
 }
 }
   ?>
-  <?php foreach($alunos as $name => $nota){
+  <?php
+   foreach($Alunos as $name => $nota){
 if($Alunos >=7){
       echo "<h3>$nome</h3>";
 }
