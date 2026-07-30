@@ -27,6 +27,7 @@
     $imc = $peso / ($altura * $altura);
  echo "Seu IMC é: $imc";
    }
+
     ?>
 </body>
 
