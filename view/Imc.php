@@ -8,25 +8,36 @@
 </head>
 
 <body>
-<form method="post">
-<div>
-        <h1>Descubra seu peso</h1>
-        <p>Insira seu peso</p>
-        <input type="text" name="peso">
-        <p>Insira sua altura</p>
-        <input type="text" name="altura">
-        <button type="submit">Calcular</button>
+
+    <div class="container">
+        <form method="post">
+            <div>
+                <h1>Descubra seu peso</h1>
+                <p>Insira seu peso</p>
+                <input type="text" name="peso">
+                <p>Insira sua altura</p>
+                <input type="text" name="altura">
+                <button type="submit">Calcular</button>
+            </div>
+
+        </form>
     </div>
+    <?php
+    require "../Controller/ImcController.php";
 
-</form>    
-  <?php
-   if(isset($_POST["peso"]) && isset($_POST["altura"])){
-    $peso = $_POST["peso"];
-    $altura = $_POST["altura"];
+    $imcControl = new ImcController();
 
-    $imc = $peso / ($altura * $altura);
- echo "Seu IMC é: $imc";
-   }
+    if (isset($_POST["peso"]) && isset($_POST["altura"])) {
+        $peso = $_POST["peso"];
+        $altura = $_POST["altura"];
+
+        $resultado = $imcControl->CalculoIMC($peso, $altura);
+
+     
+
+        echo "Seu IMC é: " . $resultado["imc"] . "<br>";
+        echo "Sua condição é: " . $resultado["faixa"];
+    }
 
     ?>
 </body>
